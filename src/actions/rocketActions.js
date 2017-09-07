@@ -1,13 +1,12 @@
 //fetch books from the application
 
 import Axios from 'axios';
-
 const rocketUrl =  'https://launchlibrary.net/1.2/rocket';
 
-export const fetchRocketsSucces = (rocket) => {
+export const fetchRocketsSucces = (rockets) => {
   return {
-    type: 'ROCKET_SUCCESS',
-    rocket
+    type: 'FETCH_ROCKET_SUCCESS',
+    rockets
   };
 };
 
@@ -16,9 +15,11 @@ export const fetchRockets = () => {
   return (dispatch) => {
     return Axios.get(rocketUrl)
       .then(response => {
-        dispatch(fetchRocketsSucces, response.data);
+        // console.log(response.data);
+        dispatch(fetchRocketsSucces(response.data));
       })
       .catch(error => {
+        console.log('i have errored');
         throw(error);
     });
   };
