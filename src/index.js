@@ -4,9 +4,11 @@ import 'babel-polyfill';
 import React from 'react';
 import { render } from 'react-dom';
 
+import App from './components/App';
+
 render(
-  <div>
-    <h1>Hello World</h1>
+  <div className ="container">
+    <App/>
   </div>,
   document.getElementById('app')
 );
