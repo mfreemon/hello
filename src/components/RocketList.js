@@ -1,48 +1,31 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import * as rocketActions from '../actions/rocketActions';
 
 
-class RocketList extends React.Component{
-  constructor(props){
-    super(props);
-  }
-
-  componentWillMount(){
-    this.props.fetchRockets();
-  }
+class RocketList extends React.Component {
 
 
-  render() {
+  render(){
+    const { rocketList } = this.props;
     return(
       <div>
         <h3>List of Rockets</h3>
-        <ul>
-          {this.props.rockets.map((b, i) =>
-            <li key={i}>{b.name}</li>
-          )}
-        </ul>
+        <div className="row">
+          <div>
+            <ul >
+              {rocketList.map((b, i) =>
+                <li className="thumbnail" key={i}>{b.name}</li>
+              )}
+            </ul>
+          </div>
+        </div>
       </div>
     );
   }
 }
 
+RocketList.defaultProps = {
+  rocketList: ['Rocket1', 'Rocket2']
 
-
-
-
-// Maps state from store to props
-const mapStateProps = (state) => {
-  return {
-    rockets: state.rockets
-  };
 };
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    fetchRockets: () => dispatch(rocketActions.fetchRockets())
-        // actions mappings here
-  };
-};
-
-export default connect(mapStateProps, mapDispatchToProps)(RocketList);
+export default RocketList;
