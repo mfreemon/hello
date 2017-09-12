@@ -8,16 +8,12 @@ class RocketList extends React.Component {
     const { rocketList } = this.props;
     return(
       <div>
-        <h3>List of Rockets</h3>
-        <div className="row">
-          <div>
-            <ul >
-              {rocketList.map((b, i) =>
-                <li className="thumbnail" key={i}>{b.name}</li>
-              )}
-            </ul>
-          </div>
-        </div>
+        <h3>Rockets Sorted Alphabetically</h3>
+        <ul >
+          {rocketList.map((b, i) =>
+            <li className="rocket" key={i}>{b.name}</li>
+          )}
+        </ul>
       </div>
     );
   }

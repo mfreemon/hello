@@ -1,0 +1,22 @@
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start; }
+
+.rocket {
+  width: 25%;
+  height: 150px;
+  background: #42f4ee;
+  align-items: stretch;
+  padding: 15px;
+  padding: 30px;
+  margin: 10px;
+  color: white;
+  font-weight: bold;
+  font-size: 2rem;
+  text-align: center; }
+
+/*# sourceMappingURL=rockets.css.map */
