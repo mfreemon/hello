@@ -8,7 +8,7 @@
 This project uses React Slingshot as a comprehensive starter kit for rapid application development using React. Special thanks to Cory House.
 
 ## Get Started
-1. **Clone the project**. `git clone https://github.com/coryhouse/react-slingshot.git`.
+1. **Clone the project**. `git clone https://github.com/mfreemon/hello.git`.
 2. **Run the setup script**. `npm install`
 3. **Run the app**. `npm start`
 This will run the automated build process, start up a webserver, and open the application in your default browser.
