@@ -12,17 +12,17 @@ class App extends React.Component {
 
   render(){
     const { rockets } = this.props;
-    rockets.sort(function(a,b){
+    rockets.sort(function(a, b){
       let rocketA = a.name;
       let rocketB = b.name;
-      let missFire = 0;
+      let sortLaunch = 0;
       if(rocketA > rocketB){
-        missFire = 1;
+        sortLaunch = 1;
       }
       else if (rocketA < rocketB){
-        missFire = -1;
+        sortLaunch = -1;
       }
-      return missFire;
+      return sortLaunch;
     });
 
     return (

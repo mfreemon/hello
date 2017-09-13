@@ -8,8 +8,8 @@ const RocketList = ({rocketList}) => {
     <div>
       <h3>Rockets Sorted Alphabetically</h3>
       <ul >
-        {rocketList.map((b, i) =>
-          <li className="rocket" key={i}>{b.name}</li>
+        {rocketList.map((rocket, i) =>
+          <li className="rocket" key={i}>{rocket.name}</li>
         )}
       </ul>
     </div>
