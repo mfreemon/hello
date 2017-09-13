@@ -1,5 +1,5 @@
 
-export const rocketfetchReducer = ( state =[], action) => {
+export const rocketfetchReducer = ( state =[ ], action) => {
   switch(action.type){
     case 'FETCH_ROCKET_SUCCESS':
       return action.rockets.rockets;
