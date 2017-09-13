@@ -2,50 +2,13 @@ import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import * as rocketActions from '../actions/rocketActions';
 
-
 import RocketList from '../components/RocketList';
-import RocketSelector from '../components/RocketSelector';
-
-
 
 class App extends React.Component {
-  constructor(props){
-    super(props);
 
-    this.state = {
-      rockets: this.props.rockets
-    };
-
-    this.selectedRocket = this.selectedRocket.bind(this);
-    this.meTalk = this.meTalk.bind(this);
-
-    // const { rockets } = this.props;
-  }
-
-
-  componentWillMount(){
+  componentWillMount() {
     this.props.fetchRockets();
-    this.setState({rockets: Object.keys(this.props.rockets)});
   }
-
-  selectedRocket(e){
-
-    let allRockets = this.props.rockets.name.split('');
-    // let myRocket = e.target.value.split('-');
-    let similar = allRockets.reduce(function(allRockets, myRocket){
-      return allRockets[myRocket];
-    });
-
-    console.log(similar);
-
-    // console.log(allRockets);
-    // console.log(myRocket);
-  }
-
-  meTalk(){
-    console.log(this.state.rockets);
-  }
-
 
   render(){
     const { rockets } = this.props;
@@ -62,15 +25,9 @@ class App extends React.Component {
       return missFire;
     });
 
-
-
-    // console.log(rockets);
     return (
       <div>
         <h1>HelloSign</h1>
-        <RocketSelector
-          selectRocket={this.selectedRocket}
-          rocketClass={rockets}/>
         <RocketList rocketList={rockets}/>
       </div>
     );

@@ -1,27 +1,27 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 
+//decided to use simple stateless presentational component
+// because no logic needed. Just passing data to prop rocketList
+const RocketList = ({rocketList}) => {
 
-class RocketList extends React.Component {
-
-
-  render(){
-    const { rocketList } = this.props;
-    return(
-      <div>
-        <h3>Rockets Sorted Alphabetically</h3>
-        <ul >
-          {rocketList.map((b, i) =>
-            <li className="rocket" key={i}>{b.name}</li>
-          )}
-        </ul>
-      </div>
-    );
-  }
-}
+  return (
+    <div>
+      <h3>Rockets Sorted Alphabetically</h3>
+      <ul >
+        {rocketList.map((b, i) =>
+          <li className="rocket" key={i}>{b.name}</li>
+        )}
+      </ul>
+    </div>
+  );
+};
 
 RocketList.defaultProps = {
   rocketList: ['Rocket1', 'Rocket2']
+};
 
+RocketList.propTypes = {
+  rocketList: PropTypes.array
 };
 
 export default RocketList;
